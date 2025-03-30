@@ -1,13 +1,14 @@
 :root{
     --gold: #d4b44c;
     --dark-gold: #66582A;
-    --like-white: #FFF0E2;
+    --like-white: #ffffff;
 }
 
 body{
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color: rgb(255, 243, 235);
 }
 
 .container{
@@ -18,16 +19,14 @@ body{
     justify-content: center;
     align-items: center;
     font-family: "Rouge Script", cursive;
-    background-color: rgb(255, 243, 235);
 }
 a{
     text-decoration: none;
 }
 
-.title{
-    margin-bottom: 2.5em;
-    margin-top: 0;
-    font-size: 45px;
+.hey{
+    text-align: center;
+    position: fixed;
 }
 .valentines{
     display: flex;
@@ -116,7 +115,7 @@ a{
 .letter::before{
     content: '';
     position: absolute;
-    height: 90%;
+    height: 95%;
     width: 90%;
     border: 2px dashed black;
 }
@@ -151,18 +150,23 @@ a{
     align-items: center;
     flex-direction: column;
     gap: 2em;
-    transform: translateY(100%);
+    position: absolute;
+    top: 100%;
+    font-family: cursive;
+    /* visibility: hidden;
+    opacity: 0; */
 }
 
 .actual-letter p{
     width: 70%;
-    font-size: 20px;
+    font-size: 16px;
     margin: 0;
     z-index: 99;
+    text-align: left;
 }
 
-.annotation{
-    text-align: right;
+small{
+    font-size: 25px;
 }
 
 .buttons{
@@ -183,86 +187,12 @@ a{
 }
 
 .show{
-    transform: translateY(-50px);
+    top: 20%;
+    visibility: visible;
+    opacity: 1;
 }
 
 .reveal{
     transform: translateY(-180px) rotate(20deg) translateX(20px) !important;
 }
-
-/*phone view*/
-/* 
-@media only screen and (max-width: 320px){
-    .valentines{
-        transform: scale(0.7);
-    }
-}
-
-@media only screen and (max-width: 767px){
-    .valentines{
-        transform: scale(1);
-    }
-
-    .title{
-        position: relative;
-        top: -100px;
-    }
-
-    .actual-letter p{
-        font-size: 30px;
-    }
-
-    .buttons button{
-        font-size: 15px;
-    }
-}
-
-@media only screen and (min-width: 768px){
-    .valentines{
-        transform: scale(2);
-    }
-
-    .title{
-        position: relative;
-        top: -350px;
-        font-size: 80px;
-    }
-
-    .actual-letter p{
-        font-size: 60px;
-    }
-
-    .actual-letter{
-        padding-top: 6em;
-    }
-
-    .buttons button{
-        font-size: 30px;
-    }
-}
-
-@media only screen and (min-width: 1024px){
-    .valentines{
-        transform: scale(2);
-    }
-
-    .title{
-        position: relative;
-        top: -400px;
-        font-size: 150px;
-    }
-
-    .actual-letter p{
-        font-size: 90px;
-    }
-
-    .actual-letter{
-        padding-top: 8em;
-    }
-
-    .buttons button{
-        font-size: 50px;
-    }
-} */
-
 
