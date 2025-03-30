@@ -1,3 +1,14 @@
+/* Removes the blue highlight on touch */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Optional: Removes focus outline when tapped */
+:focus {
+    outline: none;
+}
+
+
 :root{
     --gold: #d4b44c;
     --dark-gold: #66582A;
