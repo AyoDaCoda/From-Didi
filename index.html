@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Didi</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="images/icons8-heart-642.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Monsieur+La+Doulaise&family=Rouge+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <p class="title">Hey Peace!</p>
+
+        <!-- Envelope -->
+        <div class="valentines" id="package">
+            
+            <div class="package">
+                <div class="envelope" >
+                    <a href="#" class="letter" id="letter">
+                        <p>A Love letter</p>     
+                    </a>
+                </div>
+                <div class="envelope_bottom"></div>
+            </div>
+
+            <div class="shadow"></div>
+        </div>
+
+        <div class="actual-letter letter " id="actual_letter">
+            <p id="message">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo esse ex at fugit qui delectus soluta dolore est itaque minima similique non voluptate expedita excepturi omnis, aut suscipit, ipsum veniam!</p>
+            <p class="annotation">~Didi 😎</p>
+            <div class="buttons">
+                <button type="button" onclick="mainStuff()">Yes</button>
+                <button type="button" onclick="mainStuff()">No</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let package = document.getElementById('package');
+            let letter = document.getElementById('letter');
+            let clicked = false;
+            let actual = document.getElementById('actual_letter');
+            let choices = document.querySelector('.buttons');
+            let msg = document.getElementById('message');
+    
+            package.addEventListener('click', () => {
+                letter.classList.add('reveal');
+                clicked = true;
+            });
+    
+            letter.addEventListener('click', () => {
+                if (clicked) {
+                    actual.classList.add('show');
+                    clicked = false;
+                }
+            });
+    
+            // Fix: Now we can access this function globally
+        });
+    
+        function mainStuff() {
+            console.log('i was clicked')
+            let msg = document.getElementById('message');
+            let choices = document.querySelector('.buttons');
+    
+            msg.textContent = "Talk to me on WhatsApp.";
+            choices.innerHTML = `<button id="close">Close</button>`;
+    
+            document.getElementById('close').addEventListener('click', () => {
+                document.getElementById('actual_letter').classList.remove('show');
+                document.getElementById('letter').classList.remove('reveal');
+                choices.innerHTML = `
+                <button type="button" onclick="mainStuff()">Yes</button>
+                <button type="button" onclick="mainStuff()">No</button>
+                `
+                msg.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo esse ex at fugit qui delectus soluta dolore est itaque minima similique non voluptate expedita excepturi omnis, aut suscipit, ipsum veniam!"
+
+            });
+        }
+    </script>
+    
+</body>
+</html>

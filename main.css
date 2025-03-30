@@ -1,0 +1,268 @@
+:root{
+    --gold: #d4b44c;
+    --dark-gold: #66582A;
+    --like-white: #FFF0E2;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rouge Script", cursive;
+    background-color: rgb(255, 243, 235);
+}
+a{
+    text-decoration: none;
+}
+
+.title{
+    margin-bottom: 2.5em;
+    margin-top: 0;
+    font-size: 45px;
+}
+.valentines{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.package{
+    position: relative;
+    cursor: pointer;
+    animation: up_down_movement 1s ease-in-out 0.3s infinite alternate;
+}
+.shadow{
+    content: '';
+    position: relative;
+    width: 300px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .3);
+    top: 40px;
+    animation: width_changer 1s ease-in-out 0.3s infinite alternate-reverse;
+}
+@keyframes width_changer {
+    0%{
+        transform: scaleX(1);
+    }
+    100%{
+        transform: scaleX(.85);
+    }
+}
+
+#animatedEllipse {
+    fill: none;
+    stroke: #007bff;
+    stroke-width: 2;
+    animation: animateWidth 3s infinite;
+}
+
+.envelope{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: black;
+    display: grid;
+    place-items: center;
+}
+.envelope::before{
+    content: "";
+    width: 212px;
+    height: 212px;
+    background-color: black;
+    transform: rotate(45deg);
+    position: relative;
+    bottom: 50%;
+    border-top-left-radius: 30px;
+}
+.envelope_bottom{
+    position: absolute;
+    border-top: 110px solid transparent;
+    border-bottom: 85px solid transparent;
+    border-right: 150px solid var(--dark-gold);
+    left: 151px;
+    top: 5px;
+}
+.envelope_bottom::before{
+    content: "";
+    position: absolute;
+    border-top: 196px solid transparent;
+    border-left: 300px solid rgb(247, 207, 220);
+    border-image: url(images/Polygon\ 3.png);
+    right: -150px;
+    top: -110px;
+    z-index: 0;
+}
+.letter{
+    background-color: var(--like-white);
+    height: 200px;
+    width: 270px;
+    position: absolute;
+    bottom: 0%;
+    transition: 0.7s;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.letter::before{
+    content: '';
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    border: 2px dashed black;
+}
+.letter p{
+    margin-bottom: 2.5em;
+    font-size: 40px;
+    margin-left: -1em;
+    color: black;
+}
+.letter img{
+    height: 90px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: rotate(-17deg);
+}
+@keyframes up_down_movement {
+    0%{
+        top: 0px;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+.actual-letter{
+    width: 85%;
+    height: fit-content;
+    padding: 3em 0 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+    transform: translateY(100%);
+}
+
+.actual-letter p{
+    width: 70%;
+    font-size: 20px;
+    margin: 0;
+    z-index: 99;
+}
+
+.annotation{
+    text-align: right;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons button{
+    margin-bottom: 1em;
+    padding: 1em 6em;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.show{
+    transform: translateY(-50px);
+}
+
+.reveal{
+    transform: translateY(-180px) rotate(20deg) translateX(20px) !important;
+}
+
+/*phone view*/
+/* 
+@media only screen and (max-width: 320px){
+    .valentines{
+        transform: scale(0.7);
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .valentines{
+        transform: scale(1);
+    }
+
+    .title{
+        position: relative;
+        top: -100px;
+    }
+
+    .actual-letter p{
+        font-size: 30px;
+    }
+
+    .buttons button{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .valentines{
+        transform: scale(2);
+    }
+
+    .title{
+        position: relative;
+        top: -350px;
+        font-size: 80px;
+    }
+
+    .actual-letter p{
+        font-size: 60px;
+    }
+
+    .actual-letter{
+        padding-top: 6em;
+    }
+
+    .buttons button{
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .valentines{
+        transform: scale(2);
+    }
+
+    .title{
+        position: relative;
+        top: -400px;
+        font-size: 150px;
+    }
+
+    .actual-letter p{
+        font-size: 90px;
+    }
+
+    .actual-letter{
+        padding-top: 8em;
+    }
+
+    .buttons button{
+        font-size: 50px;
+    }
+} */
+
+
