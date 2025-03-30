@@ -13,29 +13,37 @@
 </head>
 <body>
     <div class="container">
-        <p class="title">Hey Peace!</p>
+        <div class="hey">
 
-        <!-- Envelope -->
-        <div class="valentines" id="package">
-            
-            <div class="package">
-                <div class="envelope" >
-                    <a href="#" class="letter" id="letter">
-                        <p>A Love letter</p>     
-                    </a>
+            <!-- Envelope -->
+            <div class="valentines" id="package">
+                
+                <div class="package">
+                    <div class="envelope" >
+                        <a href="#" class="letter" id="letter">
+                            <p><b  style="color: rgb(150, 88, 92);">Hey Peace!</b> <br><small>click to read</small></p>     
+                        </a>
+                    </div>
+                    <div class="envelope_bottom"></div>
                 </div>
-                <div class="envelope_bottom"></div>
+    
+                <div class="shadow"></div>
             </div>
-
-            <div class="shadow"></div>
         </div>
 
         <div class="actual-letter letter " id="actual_letter">
-            <p id="message">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo esse ex at fugit qui delectus soluta dolore est itaque minima similique non voluptate expedita excepturi omnis, aut suscipit, ipsum veniam!</p>
-            <p class="annotation">~Didi 😎</p>
+            <p id="message">So um... How to start 😅<br>
+                To think we'd be this close considering how we met and how much I fumbled you is crazy 😂<br> <br>
+                Teasing and talking to you is some of the best parts of my day alongside your random spams and though our conversations are well beyond what just friends will talk about, you recently said something, saying the way we were chatting is giving FWB and that has had time to linger in my mind. <br> <br>
+                Even with the whole long distance and whatnot, I've had time to look at myself and realize what I have for you is genuine. <br><br>
+                Though we may still have some personal problems to sort out on our own, playing these flirting games waiting for the "perfect time" to solidify all of this is unrealistic. <br><br>
+                So even though I may not be your perfect prince charming 😅, I can at least decide to be the best version of myself for you. <br><br>
+                I'm sure you're scared (I am too 😂), but regardless of the road bumps ahead of us that we'll tackle together, I'm taking the initiative to ask... <br><br>
+                That may I be... your boyfriend? <br>
+            </p>
             <div class="buttons">
-                <button type="button" onclick="mainStuff()">Yes</button>
-                <button type="button" onclick="mainStuff()">No</button>
+                <button type="button" onclick="mainStuff(1)">Yes</button>
+                <button type="button" onclick="mainStuff(0)">No</button>
             </div>
         </div>
     </div>
@@ -59,6 +67,15 @@
             letter.addEventListener('click', () => {
                 if (clicked) {
                     actual.classList.add('show');
+                    document.querySelector('body').style.overflow = 'scroll'
+                    msg.innerHTML = `So um... How to start 😅<br>
+                To think we'd be this close considering how we met and how much I fumbled you is crazy 😂<br> <br>
+                Teasing and talking to you is some of the best parts of my day alongside your random spams and though our conversations are well beyond what just friends will talk about, you recently said something, saying the way we were chatting is giving FWB and that has had time to linger in my mind. <br> <br>
+                Even with the whole long distance and whatnot, I've had time to look at myself and realize what I have for you is genuine. <br><br>
+                Though we may still have some personal problems to sort out on our own, playing these flirting games waiting for the "perfect time" to solidify all of this is unrealistic. <br><br>
+                So even though I may not be your perfect prince charming 😅, I can at least decide to be the best version of myself for you. <br><br>
+                I'm sure you're scared (I am too 😂), but regardless of the road bumps ahead of us that we'll tackle together, I'm taking the initiative to ask... <br><br>
+                That may I be... your boyfriend? <br>`
                     clicked = false;
                 }
             });
@@ -66,23 +83,30 @@
             // Fix: Now we can access this function globally
         });
     
-        function mainStuff() {
-            console.log('i was clicked')
+        function mainStuff(p) {
             let msg = document.getElementById('message');
             let choices = document.querySelector('.buttons');
     
-            msg.textContent = "Talk to me on WhatsApp.";
+            if(p === 0){
+                msg.innerHTML = `Ohh well... Though sad can't blame you  🤧. But do tell me though... I want to know <br>~Didi 😎`;
+            }
+            else if(p === 1){
+                msg.innerHTML = `Ohh sweet... Cheers to us I guess 😂🥂. Do tell me though... I am eagerly waiting <br>~Didi 😎`
+            }
+            
             choices.innerHTML = `<button id="close">Close</button>`;
     
             document.getElementById('close').addEventListener('click', () => {
                 document.getElementById('actual_letter').classList.remove('show');
                 document.getElementById('letter').classList.remove('reveal');
                 choices.innerHTML = `
-                <button type="button" onclick="mainStuff()">Yes</button>
-                <button type="button" onclick="mainStuff()">No</button>
+                <button type="button" onclick="mainStuff(1)">Yes</button>
+                <button type="button" onclick="mainStuff(0)">No</button>
                 `
-                msg.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo esse ex at fugit qui delectus soluta dolore est itaque minima similique non voluptate expedita excepturi omnis, aut suscipit, ipsum veniam!"
-
+                
+                document.querySelector('body').style.overflow = 'hidden'
+            
+                
             });
         }
     </script>
