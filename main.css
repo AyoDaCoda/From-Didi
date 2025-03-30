@@ -163,7 +163,6 @@ a{
     gap: 2em;
     position: absolute;
     top: 100%;
-    font-family: cursive;
     /* visibility: hidden;
     opacity: 0; */
 }
@@ -174,6 +173,7 @@ a{
     margin: 0;
     z-index: 99;
     text-align: left;
+    font-family: "Nothing You Could Do", cursive;
 }
 
 small{
