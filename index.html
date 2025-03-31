@@ -21,7 +21,7 @@
                 <div class="package">
                     <div class="envelope" >
                         <a href="#" class="letter" id="letter">
-                            <p><b  style="color: rgb(150, 88, 92);">Hey Peace!</b> <br><small>click to read</small></p>     
+                            <p><b  style="color: rgb(150, 88, 92);">Hey there!</b> <br><small>click to read</small></p>     
                         </a>
                     </div>
                     <div class="envelope_bottom"></div>
@@ -32,14 +32,8 @@
         </div>
 
         <div class="actual-letter letter " id="actual_letter">
-            <p id="message">So um... How to start 😅<br>
-                To think we'd be this close considering how we met and how much I fumbled you is crazy 😂<br> <br>
-                Teasing and talking to you is some of the best parts of my day alongside your random spams and though our conversations are well beyond what just friends will talk about, you recently said something, saying the way we were chatting is giving FWB and that has had time to linger in my mind. <br> <br>
-                Even with the whole long distance and whatnot, I've had time to look at myself and realize what I have for you is genuine. <br><br>
-                Though we may still have some personal problems to sort out on our own, playing these flirting games waiting for the "perfect time" to solidify all of this is unrealistic. <br><br>
-                So even though I may not be your perfect prince charming 😅, I can at least decide to be the best version of myself for you. <br><br>
-                I'm sure you're scared (I am too 😂), but regardless of the road bumps ahead of us that we'll tackle together, I'm taking the initiative to ask... <br><br>
-                That may I be... your boyfriend? <br>
+            <p id="message">Hey there!<br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br>
             </p>
             <div class="buttons">
                 <button type="button" onclick="mainStuff(1)">Yes</button>
@@ -68,14 +62,8 @@
                 if (clicked) {
                     actual.classList.add('show');
                     document.querySelector('body').style.overflow = 'scroll'
-                    msg.innerHTML = `So um... How to start 😅<br>
-                To think we'd be this close considering how we met and how much I fumbled you is crazy 😂<br> <br>
-                Teasing and talking to you is some of the best parts of my day alongside your random spams and though our conversations are well beyond what just friends will talk about, you recently said something, saying the way we were chatting is giving FWB and that has had time to linger in my mind. <br> <br>
-                Even with the whole long distance and whatnot, I've had time to look at myself and realize what I have for you is genuine. <br><br>
-                Though we may still have some personal problems to sort out on our own, playing these flirting games waiting for the "perfect time" to solidify all of this is unrealistic. <br><br>
-                So even though I may not be your perfect prince charming 😅, I can at least decide to be the best version of myself for you. <br><br>
-                I'm sure you're scared (I am too 😂), but regardless of the road bumps ahead of us that we'll tackle together, I'm taking the initiative to ask... <br><br>
-                That may I be... your boyfriend? <br>`
+                    msg.innerHTML = `Hey there!<br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>`
                     clicked = false;
                 }
             });
@@ -88,10 +76,10 @@
             let choices = document.querySelector('.buttons');
     
             if(p === 0){
-                msg.innerHTML = `Ohh well... Though sad can't blame you  🤧. But do tell me though... I want to know <br>~Didi 😗`;
+                msg.innerHTML = `Oh well, i'm sad...`;
             }
             else if(p === 1){
-                msg.innerHTML = `Ohh sweet... Cheers to us I guess 😂🥂. Do tell me though... I am eagerly waiting <br>~Didi 😗`
+                msg.innerHTML = `Yay! I'm happy!!`
             }
             
             choices.innerHTML = `<button id="close">Close</button>`;
